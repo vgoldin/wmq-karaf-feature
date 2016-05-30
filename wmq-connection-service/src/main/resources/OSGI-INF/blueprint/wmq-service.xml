@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+           xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0">
+
+    <cm:property-placeholder persistent-id="com.backbase.wmq.service" update-strategy="reload">
+        <cm:default-properties>
+            <cm:property name="wmq.host" value="10.2.16.71"/>
+            <cm:property name="wmq.port" value="1455"/>
+            <cm:property name="wmq.queueManager" value="SENETQM"/>
+            <cm:property name="wmq.channel" value="TO.SENETQM"/>
+        </cm:default-properties>
+    </cm:property-placeholder>
+
+    <bean id="wmqPooledConnectionFactory" class="com.ibm.mq.jms.MQConnectionFactory">
+        <property name="transportType" value="1"/>
+        <property name="hostName" value="${wmq.host}"/>
+        <property name="port" value="${wmq.port}"/>
+        <property name="queueManager" value="${wmq.queueManager}"/>
+        <property name="channel" value="${wmq.channel}" />
+        <property name="useConnectionPooling" value="true" />
+    </bean>
+
+    <!--
+        Register the javax.jms.ConnectionFactory in the OSGi Service Registry
+    -->
+    <service ref="wmqPooledConnectionFactory" interface="javax.jms.ConnectionFactory">
+        <service-properties>
+            <entry key="name" value="default-wmq-cf"/>
+            <entry key="transacted" value="false" />
+            <entry key="osgi.jndi.service.name" value="jms/default-wmq-cf" />
+        </service-properties>
+    </service>
+
+</blueprint>

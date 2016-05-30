@@ -1,0 +1,25 @@
+<assembly>
+    <id>kar</id>
+    <!-- START SNIPPET: formats -->
+    <formats>
+        <format>zip</format>
+    </formats>
+    <!-- END SNIPPET: formats -->
+    <!-- START SNIPPET: fileSets -->
+    <files>
+        <file>
+            <source>src/main/filtered-resources/features.xml</source>
+            <outputDirectory>.</outputDirectory>
+            <filtered/>
+        </file>
+    </files>
+
+    <fileSets>
+        <fileSet>
+            <directory>src/main/resources/repository</directory>
+            <outputDirectory>repository</outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <fileMode>644</fileMode>
+        </fileSet>
+    </fileSets>
+</assembly>

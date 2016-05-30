@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="wmq-client-feature-${project.version}"
+          xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0">
+
+    <feature name="wmq-jms" version="7.5.0.6">
+        <bundle start-level="55">mvn:com.ibm.mq/com.ibm.mq.osgi.directip/7.5.0.6</bundle>
+        <bundle start-level="55">mvn:com.ibm.mq/com.ibm.mq.osgi.java/7.5.0.6</bundle>
+        <bundle start-level="55" start="false">mvn:com.ibm.mq/com.ibm.msg.client.osgi.commonservices.j2se/7.5.0.6</bundle>
+        <bundle start-level="55">mvn:com.ibm.mq/com.ibm.msg.client.osgi.jms/7.5.0.6</bundle>
+        <bundle start-level="55">mvn:com.ibm.mq/com.ibm.msg.client.osgi.jms.prereq/7.5.0.6</bundle>
+        <bundle start-level="55">mvn:com.ibm.mq/com.ibm.msg.client.osgi.nls/7.5.0.6</bundle>
+        <bundle start-level="55">mvn:com.ibm.mq/com.ibm.msg.client.osgi.wmq/7.5.0.6</bundle>
+        <bundle start-level="55">mvn:com.ibm.mq/com.ibm.msg.client.osgi.wmq.nls/7.5.0.6</bundle>
+        <bundle start-level="55">mvn:com.ibm.mq/com.ibm.msg.client.osgi.wmq.prereq/7.5.0.6</bundle>
+
+        <bundle start-level="60">
+            mvn:com.backbase.mosaic/wmq-connection-service/1.0-SNAPSHOT
+        </bundle>
+    </feature>
+</features>
