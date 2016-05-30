@@ -3,7 +3,7 @@
            xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
            xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0">
 
-    <cm:property-placeholder persistent-id="com.backbase.wmq.service" update-strategy="reload">
+    <cm:property-placeholder persistent-id="wmq.service" update-strategy="reload">
         <cm:default-properties>
             <cm:property name="wmq.host" value="10.2.16.71"/>
             <cm:property name="wmq.port" value="1455"/>

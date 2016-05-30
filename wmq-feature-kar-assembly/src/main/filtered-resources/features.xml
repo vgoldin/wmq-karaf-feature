@@ -16,7 +16,7 @@
         <bundle start-level="55">mvn:com.ibm.mq/com.ibm.msg.client.osgi.wmq.prereq/7.5.0.6</bundle>
 
         <bundle start-level="60">
-            mvn:com.backbase.mosaic/wmq-connection-service/1.0-SNAPSHOT
+            mvn:nl.eco-sol/wmq-connection-service/1.0-SNAPSHOT
         </bundle>
     </feature>
 </features>

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>wmq-karaf-feature</artifactId>
-        <groupId>com.backbase.mosaic</groupId>
+        <groupId>nl.eco-sol</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -12,7 +12,7 @@
     <artifactId>wmq-connection-service</artifactId>
     <packaging>bundle</packaging>
 
-    <name>Backbase :: Mosaic :: Integration Bus :: WebSphere MQ :: Service</name>
+    <name>Karaf :: WebSphere MQ :: Service</name>
 
     <build>
         <plugins>
@@ -44,7 +44,7 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>target/classes/com.backbase.wmq.service.cfg</file>
+                                    <file>target/classes/wmq.service.cfg</file>
                                     <type>cfg</type>
                                     <classifier>wmq.service</classifier>
                                 </artifact>
