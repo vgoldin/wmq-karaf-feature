@@ -1,9 +1,9 @@
 # wmq-karaf-feature
 IBM WebSphere Connection Pool Service for Apache Karaf
 
-1. Define default WebSphereMQ connectivity parameters in src/main/resources/wmq.service.cfg
-2. Build with "mvn clean install"
-3. Deploy wmq-feature-kar-assembly-${project.version}.kar to KARAF_HOME/deploy folder
+1. Build with "mvn clean install"
+2. Deploy wmq-feature-kar-assembly-${project.version}.kar to KARAF_HOME/deploy folder
+3. Copy src/main/resources/wmq.service.cfg to KARAF_HOME/etc and adjust WebSphereMQ connectivity parameters
 
 Reference the service in your OSGi bundle with:
 
